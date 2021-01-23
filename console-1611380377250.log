@@ -1,0 +1,103 @@
+function Song(){
+var songs = [];
+function addNewSong(songName){
+    if(isSongExist(songName)){
+    console.log('Song Already Exist in the List so cant add');
+}
+else{
+songs.push(songName);
+console.log("song Added ");
+}
+}
+function isSongExist(songName){
+for(let i = 0;i<songs.length; i++){
+if(songs[i]==songName){
+return true;
+}
+}
+return false;
+}
+return [addNewSong,isSongExist];
+}
+undefined
+var t = Song();
+undefined
+t;
+(2) [ƒ, ƒ]0: ƒ addNewSong(songName)1: ƒ isSongExist(songName)length: 2__proto__: Array(0)
+addNewSong;
+VM157:1 Uncaught ReferenceError: addNewSong is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM157:1
+t;
+(2) [ƒ, ƒ]0: ƒ addNewSong(songName)1: ƒ isSongExist(songName)length: 2__proto__: Array(0)
+t[0];
+ƒ addNewSong(songName){
+    if(isSongExist(songName)){
+    console.log('Song Already Exist in the List so cant add');
+}
+else{
+songs.push(songName);
+console.log("song Added ");
+}
+}
+t[0]('ABC');
+VM78:9 song Added 
+undefined
+t[1])
+VM263:1 Uncaught SyntaxError: Unexpected token ')'
+t[1]('ABC');
+    
+true
+songs;
+VM306:1 Uncaught ReferenceError: songs is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM306:1
+t;
+(2) [ƒ, ƒ]0: ƒ addNewSong(songName)1: ƒ isSongExist(songName)length: 2__proto__: Array(0)
+t[0]('ABC');
+VM78:5 Song Already Exist in the List so cant add
+undefined
+const function Song(){
+var songs = [];
+function addNewSong(songName){
+    if(isSongExist(songName)){
+    console.log('Song Already Exist in the List so cant add');
+}
+else{
+songs.push(songName);
+console.log("song Added ");
+}
+}
+function isSongExist(songName){
+for(let i = 0;i<songs.length; i++){
+if(songs[i]==songName){
+return true;
+}
+}
+return false;
+}
+return [addNewSong,isSongExist];
+}
+VM417:1 Uncaught SyntaxError: Unexpected token 'function'
+const Song = function Song(){
+var songs = [];
+function addNewSong(songName){
+    if(isSongExist(songName)){
+    console.log('Song Already Exist in the List so cant add');
+}
+else{
+songs.push(songName);
+console.log("song Added ");
+}
+}
+function isSongExist(songName){
+for(let i = 0;i<songs.length; i++){
+if(songs[i]==songName){
+return true;
+}
+}
+return false;
+}
+return [addNewSong,isSongExist];
+}
+VM424:1 Uncaught SyntaxError: Identifier 'Song' has already been declared

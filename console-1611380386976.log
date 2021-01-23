@@ -1,0 +1,107 @@
+const Song = (function Song(){
+var songs = [];
+function addNewSong(songName){
+    if(isSongExist(songName)){
+    console.log('Song Already Exist in the List so cant add');
+}
+else{
+songs.push(songName);
+console.log("song Added ");
+}
+}
+function isSongExist(songName){
+for(let i = 0;i<songs.length; i++){
+if(songs[i]==songName){
+return true;
+}
+}
+return false;
+}
+return [addNewSong,isSongExist];
+})();
+undefined
+Song;
+(2) [ƒ, ƒ]
+Song();
+VM70:1 Uncaught TypeError: Song is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM70:1
+Song[0]('ABC');
+VM33:9 song Added 
+undefined
+Song[0]('ABC');
+VM33:5 Song Already Exist in the List so cant add
+undefined
+Song[0];
+ƒ addNewSong(songName){
+    if(isSongExist(songName)){
+    console.log('Song Already Exist in the List so cant add');
+}
+else{
+songs.push(songName);
+console.log("song Added ");
+}
+}
+console.dir(Song[0]);
+VM237:1 ƒ addNewSong(songName)arguments: nullcaller: nulllength: 1name: "addNewSong"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM33:3[[Scopes]]: Scopes[3]0: Closure (Song)isSongExist: ƒ isSongExist(songName)songs: ["ABC"]1: Script {Song: Array(2)}2: Global {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+const Song = (function Song(){
+var songs = [];
+function addNewSong(songName){
+    if(isSongExist(songName)){
+    console.log('Song Already Exist in the List so cant add');
+}
+else{
+songs.push(songName);
+console.log("song Added ");
+}
+}
+function isSongExist(songName){
+for(let i = 0;i<songs.length; i++){
+if(songs[i]==songName){
+return true;
+}
+}
+return false;
+}
+return [addNewSong,isSongExist];
+})();
+VM252:1 Uncaught SyntaxError: Identifier 'Song' has already been declared
+Song;
+(2) [ƒ, ƒ]
+t;
+VM278:1 Uncaught ReferenceError: t is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM278:1
+Song;
+(2) [ƒ, ƒ]0: ƒ addNewSong(songName)1: ƒ isSongExist(songName)length: 2__proto__: Array(0)
+Array.prototype;
+[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]
+var sum =(a,b)=>a+b;
+undefined
+typeof sum;
+"function"
+sum(10,20);
+30
+var sum =(a,b)=>{
+console.log(a,b);
+return a+b
+
+};
+undefined
+sum(10,20);
+VM486:2 10 20
+30
+disp();
+function disp(){
+console.log('I am Disp ');
+}
+VM607:3 I am Disp 
+undefined
+f();
+var f = function output(){
+console.log('I am Output ');
+}
+VM651:1 Uncaught TypeError: f is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM651:1

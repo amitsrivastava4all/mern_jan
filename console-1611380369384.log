@@ -1,0 +1,89 @@
+function add(){
+if(arguments.length>2){
+throw new Error('Illegal Args ');
+}
+var sum =0;
+for(let i = 0; i<arguments.length; i++){
+sum+=arguments[i];
+}
+return sum;
+}
+undefined
+add(10,20);
+30
+add(10,20,30);
+VM352:3 Uncaught Error: Illegal Args 
+    at add (<anonymous>:3:7)
+    at <anonymous>:1:1
+add @ VM352:3
+(anonymous) @ VM397:1
+var songs = [];
+function addNewSong(songName){
+    if(isSongExist(songName)){
+    console.log('Song Already Exist in the List so cant add');
+}
+else{
+songs.push(songName);
+console.log("song Added ");
+}
+}
+function isSongExist(songName){
+for(let i = 0;i<songs.length; i++){
+if(songs[i]==songName){
+return true;
+}
+}
+return false;
+}
+undefined
+songs;
+[]
+addNewSong('Bang Bang');
+VM1007:8 song Added 
+undefined
+songs;
+["Bang Bang"]
+addNewSong('Bang Bang');
+VM1007:4 Song Already Exist in the List so cant add
+undefined
+addNewSong('Boom Boom');
+VM1007:8 song Added 
+undefined
+songs;
+(2) ["Bang Bang", "Boom Boom"]
+addNewSong = 10;
+10
+addNewSong('Boom Boom');
+VM1169:1 Uncaught TypeError: addNewSong is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM1169:1
+typeof addNewSong;
+"number"
+typeof songs;
+"object"
+songs instanceof Array;
+true
+class A{}
+undefined
+typeof A;
+"function"
+const W = 100;
+undefined
+W = 'Amit';
+VM1447:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:3
+(anonymous) @ VM1447:1
+class V{
+
+}
+undefined
+V = 1000;
+1000
+typeof V;
+"number"
+class V1{}
+undefined
+class V1{}
+undefined
+Array;
+ƒ Array() { [native code] }

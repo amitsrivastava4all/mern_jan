@@ -1,0 +1,130 @@
+const Song = function Song(){
+var songs = [];
+function addNewSong(songName){
+    if(isSongExist(songName)){
+    console.log('Song Already Exist in the List so cant add');
+}
+else{
+songs.push(songName);
+console.log("song Added ");
+}
+}
+function isSongExist(songName){
+for(let i = 0;i<songs.length; i++){
+if(songs[i]==songName){
+return true;
+}
+}
+return false;
+}
+return [addNewSong,isSongExist];
+}
+undefined
+typeof Song;
+"function"
+Song = 1000;
+VM76:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:6
+(anonymous) @ VM76:1
+var t = Song();
+undefined
+t[0]('ABC');
+VM16:9 song Added 
+undefined
+Song
+ƒ Song(){
+var songs = [];
+function addNewSong(songName){
+    if(isSongExist(songName)){
+    console.log('Song Already Exist in the List so cant add');
+}
+else{
+songs.push(songName);
+console.log("song Ad…
+t[0]('ABC');
+VM16:5 Song Already Exist in the List so cant add
+undefined
+var t = Song();
+undefined
+t[0]('ABC');
+VM16:9 song Added 
+undefined
+function show()
+{
+console.log('I am Show');
+}
+undefined
+var a = function abc(){
+console.log('A');
+}
+undefined
+show();
+VM288:3 I am Show
+undefined
+window.show();
+VM288:3 I am Show
+undefined
+abc;
+VM462:1 Uncaught ReferenceError: abc is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM462:1
+window.a();
+VM375:2 A
+undefined
+var f = function(){
+console.log('F');
+}
+undefined
+f();
+VM596:2 F
+undefined
+f;
+ƒ (){
+console.log('F');
+}
+f.name
+"f"
+a.name;
+"abc"
+a;
+ƒ abc(){
+console.log('A');
+}
+(function (){
+    console.log('IIFE');
+})()
+VM797:2 IIFE
+undefined
+const Song = function Song(){
+var songs = [];
+function addNewSong(songName){
+    if(isSongExist(songName)){
+    console.log('Song Already Exist in the List so cant add');
+}
+else{
+songs.push(songName);
+console.log("song Added ");
+}
+}
+function isSongExist(songName){
+for(let i = 0;i<songs.length; i++){
+if(songs[i]==songName){
+return true;
+}
+}
+return false;
+}
+return [addNewSong,isSongExist];
+}
+VM842:1 Uncaught SyntaxError: Identifier 'Song' has already been declared
+typeof Song;
+"function"
+var ff = Song();
+undefined
+ff;
+(2) [ƒ, ƒ]
+ff[0]('ABC');
+VM16:9 song Added 
+undefined
+typeof Song;
+"function"

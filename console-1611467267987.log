@@ -1,0 +1,174 @@
+var add = (function () { 
+var counter = 0; 
+return function () {counter += 1; return counter} 
+})(); 
+undefined
+typeof add;
+"function"
+add;
+ƒ () {counter += 1; return counter}
+add();
+1
+add();
+2
+add();
+3
+add();
+4
+console.dir(add);
+VM180:1 ƒ anonymous()arguments: nullcaller: nulllength: 0name: ""prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM62:3[[Scopes]]: Scopes[2]0: Closure {counter: 4}1: Global {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+function show(){
+console.log(i);
+for(let i = 1; i<=10; i++){
+console.log(i);
+}
+console.log(i);
+}
+undefined
+show();
+VM329:2 Uncaught ReferenceError: i is not defined
+    at show (<anonymous>:2:13)
+    at <anonymous>:1:1
+show @ VM329:2
+(anonymous) @ VM349:1
+function show(){
+//console.log(i);
+for(let i = 1; i<=10; i++){
+console.log(i);
+}
+console.log(i);
+}
+undefined
+show();
+VM357:4 1
+VM357:4 2
+VM357:4 3
+VM357:4 4
+VM357:4 5
+VM357:4 6
+VM357:4 7
+VM357:4 8
+VM357:4 9
+VM357:4 10
+VM357:6 Uncaught ReferenceError: i is not defined
+    at show (<anonymous>:6:13)
+    at <anonymous>:1:1
+show @ VM357:6
+(anonymous) @ VM363:1
+function show(){
+//console.log(i);
+for(let i = 1; i<=10; i++){
+console.log(i);
+}
+//console.log(i);
+}
+undefined
+show();'
+VM398:1 Uncaught SyntaxError: Invalid or unexpected token
+show();
+VM371:4 1
+VM371:4 2
+VM371:4 3
+VM371:4 4
+VM371:4 5
+VM371:4 6
+VM371:4 7
+VM371:4 8
+VM371:4 9
+VM371:4 10
+undefined
+function show(){
+console.log(i);
+for(var i = 1; i<=10; i++){
+console.log(i);
+}
+console.log(i);
+}
+undefined
+show();
+VM433:2 undefined
+VM433:4 1
+VM433:4 2
+VM433:4 3
+VM433:4 4
+VM433:4 5
+VM433:4 6
+VM433:4 7
+VM433:4 8
+VM433:4 9
+VM433:4 10
+VM433:6 11
+undefined
+function show(){
+console.log(i);
+var i = 30;
+console.log(i);
+for(var i = 1; i<=10; i++){
+console.log(i);
+}
+var i = 20;
+console.log(i);
+}
+undefined
+show();
+VM505:2 undefined
+VM505:4 30
+VM505:6 1
+VM505:6 2
+VM505:6 3
+VM505:6 4
+VM505:6 5
+VM505:6 6
+VM505:6 7
+VM505:6 8
+VM505:6 9
+VM505:6 10
+VM505:9 20
+undefined
+function show(){
+console.log(i);
+let i = 30;
+console.log(i);
+for(let i = 1; i<=10; i++){
+console.log(i);
+}
+let i = 20;
+console.log(i);
+}
+VM564:8 Uncaught SyntaxError: Identifier 'i' has already been declared
+var f = (function (c){
+    return function(){
+    return ++c;
+}
+}();
+VM661:5 Uncaught SyntaxError: Unexpected token ';'
+var f = (function (c){
+    return function(){
+    return ++c;
+}
+})();
+undefined
+f;
+ƒ (){
+    return ++c;
+}
+console.dir(f);
+VM727:1 ƒ anonymous()arguments: nullcaller: nulllength: 0name: ""prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM667:2[[Scopes]]: Scopes[2]0: Closure {c: undefined}1: Global {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+var f = (function (c){
+    return function(){
+    return ++c;
+}
+})(100);
+undefined
+f();
+101
+f();
+102
+f();
+103
+f();
+104
+f();
+105

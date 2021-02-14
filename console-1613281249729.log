@@ -1,0 +1,289 @@
+var obj = {};
+undefined
+obj.name = "Amit";
+"Amit"
+obj;
+{name: "Amit"}
+var obj2 = {id:1001, name:'Amit'};
+undefined
+obj2;
+{id: 1001, name: "Amit"}
+obj2.city ='Delhi';
+"Delhi"
+obj2;
+{id: 1001, name: "Amit", city: "Delhi"}
+obj2;
+{id: 1001, name: "Amit", city: "Delhi"}
+delete obj2.id;
+true
+obj2;
+{name: "Amit", city: "Delhi"}
+var arr = [6,10,20,10,100,10,90,10];
+
+undefined
+arr = arr.filter(ele=>ele!=10)
+(4) [6, 20, 100, 90]
+function  Expense(id , name, cost, date,remarks, url){
+    this.id = id;
+    this.name = name;
+    this.cost = cost;
+    this.date = date;
+    this.remarks = remarks ;
+    this.url = url;
+    this.isMarked  = false;
+}
+undefined
+var exp = new Expense(1001, "Abcd",90,"fhsdjkf","fsdfdsf");
+undefined
+typeof exp;
+"object"
+exp instanceof Expense;
+true
+exp;
+Expense {id: 1001, name: "Abcd", cost: 90, date: "fhsdjkf", remarks: "fsdfdsf", …}
+function createExpenseObject(expenseObject){     
+     const expense = {};
+     for(let key in expenseObject){
+         expense[key] = expenseObject[key];
+     }
+     expense.isMarked =false;
+
+
+
+     return expense;
+ }
+undefined
+function  createExpense(id , name, cost, date,remarks, url){
+    const myThis = {};    
+myThis.id = id;
+    myThis.name = name;
+    myThis.cost = cost;
+    myThis.date = date;
+    myThis.remarks = remarks ;
+    myThis.url = url;
+    myThis.isMarked  = false;
+return myThis;
+}
+undefined
+var t = createExpense(1001, "A",543,"fsdf","gdgfd","tetr");
+undefined
+typeof t;
+"object"
+t;
+{id: 1001, name: "A", cost: 543, date: "fsdf", remarks: "gdgfd", …}
+t instanceof createExpense;
+false
+t instanceof Object;
+true
+exp;
+Expense {id: 1001, name: "Abcd", cost: 90, date: "fhsdjkf", remarks: "fsdfdsf", …}
+exp instanceof Expense;
+true
+exp instanceof Object;'
+VM1188:1 Uncaught SyntaxError: Invalid or unexpected token
+exp instanceof Object;
+true
+var myWindow = {};
+undefined
+function test(){}
+undefined
+myWindow.myTest = test;
+ƒ test(){}
+myWindow;
+{myTest: ƒ}
+test;
+ƒ test(){}
+console.dir(test);
+VM1412:1 ƒ test()arguments: nullcaller: nulllength: 0name: "test"prototype: {constructor: ƒ}__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0][[FunctionLocation]]: VM1268:1[[Scopes]]: Scopes[1]
+undefined
+function  Expense(id , name, cost, date,remarks, url){
+    this.id = id;
+    this.name = name;
+    this.cost = cost;
+    this.date = date;
+    this.remarks = remarks ;
+    this.url = url;
+    this.isMarked  = false;
+}
+undefined
+const exp = new Expense(1001,"sdfsdf",4344);
+VM1567:1 Uncaught SyntaxError: Identifier 'exp' has already been declared
+const exp2 = new Expense(1001,"sdfsdf",4344);
+undefined
+exp2;
+Expense {id: 1001, name: "sdfsdf", cost: 4344, date: undefined, remarks: undefined, …}
+function  Expense(id , name, cost, date,remarks, url){
+    this.id = id;
+    this.name = name;
+    this.cost = cost;
+    this.date = date;
+    this.remarks = remarks ;
+    this.url = url;
+    this.isMarked  = false;
+    this.printExpense = function(){
+    console.log(this.id , this.name);
+}
+}
+undefined
+const exp3 = new Expense(1001,"sdfsdf",4344);
+undefined
+exp3;
+Expense {id: 1001, name: "sdfsdf", cost: 4344, date: undefined, remarks: undefined, …}cost: 4344date: undefinedid: 1001isMarked: falsename: "sdfsdf"printExpense: ƒ ()remarks: undefinedurl: undefined__proto__: Object
+Expense
+ƒ Expense(id , name, cost, date,remarks, url){
+    this.id = id;
+    this.name = name;
+    this.cost = cost;
+    this.date = date;
+    this.remarks = remarks ;
+    this.url = url;
+    this.isMarked  = …
+Expense.prototype;
+{constructor: ƒ}
+typeof Expense.prototype;
+"object"
+Expense.prototype.print = function(){
+console.log('id is ',this.id , 'Name is ',this.name);
+}
+ƒ (){
+console.log('id is ',this.id , 'Name is ',this.name);
+}
+Expense.prototype
+{print: ƒ, constructor: ƒ}
+Expense.prototype.constructor
+ƒ Expense(id , name, cost, date,remarks, url){
+    this.id = id;
+    this.name = name;
+    this.cost = cost;
+    this.date = date;
+    this.remarks = remarks ;
+    this.url = url;
+    this.isMarked  = …
+Expense.prototype.constructor == Expense;
+true
+Expense.prototype.print
+ƒ (){
+console.log('id is ',this.id , 'Name is ',this.name);
+}
+var exp4 = new Expense(1001, "Exp",3344);
+undefined
+exp4;
+Expense {id: 1001, name: "Exp", cost: 3344, date: undefined, remarks: undefined, …}cost: 3344date: undefinedid: 1001isMarked: falsename: "Exp"printExpense: ƒ ()remarks: undefinedurl: undefined__proto__: print: ƒ ()constructor: ƒ Expense(id , name, cost, date,remarks, url)__proto__: Object
+exp4.__proto__
+{print: ƒ, constructor: ƒ}print: ƒ ()constructor: ƒ Expense(id , name, cost, date,remarks, url)__proto__: Object
+exp4.__proto__ == Expense.prototype;
+true
+exp4.__proto__
+{print: ƒ, constructor: ƒ}print: ƒ ()constructor: ƒ Expense(id , name, cost, date,remarks, url)__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+exp4.__proto__.prototype;
+undefined
+exp4.__proto__;
+{print: ƒ, constructor: ƒ}
+var f = exp4.__proto__;
+undefined
+f;
+{print: ƒ, constructor: ƒ}print: ƒ ()constructor: ƒ Expense(id , name, cost, date,remarks, url)__proto__: Object
+exp4.__proto__.__proto__;
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+exp4.__proto__.__proto__.__proto__;
+null
+function hello(){
+console.log('Hello');
+}
+undefined
+hello();
+VM2689:2 Hello
+undefined
+function hello(){
+console.log('Hello' , this);
+}
+undefined
+window.hello();
+VM2774:2 Hello Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+hello();
+VM2774:2 Hello Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+var f = new hello();
+VM2774:2 Hello hello {}
+undefined
+typeof f;
+"object"
+f;
+hello {}__proto__: Object
+hello.__proto__
+ƒ () { [native code] }
+console.dir(hello.__proto__);
+VM3014:1 ƒ anonymous()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: <unknown>[[Scopes]]: Scopes[0]
+undefined
+hello.prototype
+{constructor: ƒ}
+exp4;
+Expense {id: 1001, name: "Exp", cost: 3344, date: undefined, remarks: undefined, …}
+exp4.id;
+1001
+exp4.__proto__;
+{print: ƒ, constructor: ƒ}
+exp4;
+Expense {id: 1001, name: "Exp", cost: 3344, date: undefined, remarks: undefined, …}cost: 3344date: undefinedid: 1001isMarked: falsename: "Exp"printExpense: ƒ ()remarks: undefinedurl: undefined__proto__: print: ƒ ()constructor: ƒ Expense(id , name, cost, date,remarks, url)__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+Expense.prototype;
+{print: ƒ, constructor: ƒ}
+Expense.__proto__;
+ƒ () { [native code] }
+exp4.__proto__
+{print: ƒ, constructor: ƒ}
+exp4.__proto__.__proto__
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+Expense
+ƒ Expense(id , name, cost, date,remarks, url){
+    this.id = id;
+    this.name = name;
+    this.cost = cost;
+    this.date = date;
+    this.remarks = remarks ;
+    this.url = url;
+    this.isMarked  = …
+Expense.__proto__
+ƒ () { [native code] }
+Expense.__proto__.__proto__
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+Expense.__proto__.__proto__.__proto__
+null
+exp4.prototype;
+undefined
+exp4.__proto__;
+{print: ƒ, constructor: ƒ}
+Expense.prototype.count = 100;
+100
+exp4;
+Expense {id: 1001, name: "Exp", cost: 3344, date: undefined, remarks: undefined, …}cost: 3344date: undefinedid: 1001isMarked: falsename: "Exp"printExpense: ƒ ()remarks: undefinedurl: undefined__proto__: count: 100print: ƒ ()constructor: ƒ Expense(id , name, cost, date,remarks, url)__proto__: Object
+exp2;
+Expense {id: 1001, name: "sdfsdf", cost: 4344, date: undefined, remarks: undefined, …}cost: 4344date: undefinedid: 1001isMarked: falsename: "sdfsdf"remarks: undefinedurl: undefined__proto__: constructor: ƒ Expense(id , name, cost, date,remarks, url)__proto__: Object
+var exp5 = new Expense(1002,"ghdkjg");
+undefined
+exp5;
+Expense {id: 1002, name: "ghdkjg", cost: undefined, date: undefined, remarks: undefined, …}cost: undefineddate: undefinedid: 1002isMarked: falsename: "ghdkjg"printExpense: ƒ ()remarks: undefinedurl: undefined__proto__: count: 100print: ƒ ()constructor: ƒ Expense(id , name, cost, date,remarks, url)__proto__: Object
+exp4.id ++;
+1001
+exp4.id;
+1002
+exp5.id=9090;
+9090
+exp5;
+Expense {id: 9090, name: "ghdkjg", cost: undefined, date: undefined, remarks: undefined, …}
+exp4;
+Expense {id: 1002, name: "Exp", cost: 3344, date: undefined, remarks: undefined, …}
+exp5.__proto__.prototype.count++;
+VM3888:1 Uncaught TypeError: Cannot read property 'count' of undefined
+    at <anonymous>:1:16
+(anonymous) @ VM3888:1
+exp5.__proto__.count;
+100
+exp5.__proto__.count++;
+100
+exp5.__proto__.count;
+101
+exp5.count;
+101
+exp4.count;
+101

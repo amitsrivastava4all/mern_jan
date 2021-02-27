@@ -1,0 +1,61 @@
+Date.now();
+1614402500550
+var t = Date.now();
+undefined
+var t - Date.now();
+VM145:1 Uncaught SyntaxError: Unexpected token '-'
+  Date.now() - t;
+21339
+var t = Date.now();
+for(let i = 1; i<=100000; i++){
+
+}
+console.log(Date.now()-t);
+VM337:5 3
+undefined
+console.log("Start ");
+setTimeout(()=>console.log("i WIll run later on "),5000);
+console.log("End ");
+VM541:1 Start 
+VM541:3 End 
+undefined
+VM541:2 i WIll run later on 
+console.log("Start ");
+setTimeout(()=>console.log("i WIll run later on "),2000);
+console.log("End ");
+VM577:1 Start 
+VM577:3 End 
+undefined
+VM577:2 i WIll run later on 
+console.log("Start ");
+var e = doWork();
+console.log("End ",e);
+
+function doWork(){
+setTimeout(()=>{
+console.log("i WIll run later on ");
+return "I am Back ";
+},7000);
+}
+VM733:1 Start 
+VM733:3 End  undefined
+undefined
+VM733:7 i WIll run later on 
+function callBack(data){
+console.log(data);
+}
+console.log("Start ");
+doWork(callBack);
+console.log("End ");
+
+function doWork(fn){
+setTimeout(()=>{
+console.log("i WIll run later on ");
+fn( "I am Back ");
+},7000);
+}
+VM846:4 Start 
+VM846:6 End 
+undefined
+VM846:10 i WIll run later on 
+VM846:2 I am Back 

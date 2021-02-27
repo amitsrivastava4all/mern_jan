@@ -1,0 +1,13 @@
+{
+	"products": [{
+		"id": 1001,
+		"name": "Apple",
+		"price": 9999,
+		"desc": "IPhone"
+	}, {
+		"id": 1002,
+		"name": "Samsung",
+		"price": 2999,
+		"desc": "Galaxy"
+	}]
+}

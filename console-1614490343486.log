@@ -1,0 +1,492 @@
+console.log("Start ");
+var e = doWork();
+console.log("End ",e);
+
+function doWork(){
+setTimeout(()=>{
+console.log("i WIll run later on ");
+return "I am Back ";
+},7000);
+}
+VM35:1 Start 
+VM35:3 End  undefined
+undefined
+VM35:7 i WIll run later on 
+function callBack(data){
+console.log(data);
+}
+console.log("Start ");
+doWork(callBack);
+console.log("End ");
+
+function doWork(fn){
+setTimeout(()=>{
+console.log("i WIll run later on ");
+fn( "I am Back ");
+},7000);
+}
+VM60:4 Start 
+VM60:6 End 
+undefined
+VM60:10 i WIll run later on 
+VM60:2 I am Back 
+function callBack2(data){
+console.log(data);
+}
+function callBack(data){
+console.log(data);
+setTimeout(()=>{
+callBack2('I am CallBack 2 Called');
+},5000);
+}
+console.log("Start ");
+doWork(callBack);
+console.log("End ");
+
+function doWork(fn){
+setTimeout(()=>{
+console.log("i WIll run later on ");
+fn( "I am Back ");
+},7000);
+}
+VM306:10 Start 
+VM306:12 End 
+undefined
+VM306:16 i WIll run later on 
+VM306:5 I am Back 
+VM306:2 I am CallBack 2 Called
+console.log("Start ");
+try{
+var e = doWork();
+}
+catch(ex){
+console.log(ex);
+}
+console.log("End ",e);
+
+function doWork(){
+setTimeout(()=>{
+console.log("i WIll run later on ");
+throw new Error("Error Generate After 7 sec ");
+//return "I am Back ";
+},7000);
+}
+VM595:1 Start 
+VM595:8 End  undefined
+undefined
+VM595:12 i WIll run later on 
+VM595:13 Uncaught Error: Error Generate After 7 sec 
+    at <anonymous>:13:7
+(anonymous) @ VM595:13
+setTimeout (async)
+doWork @ VM595:11
+(anonymous) @ VM595:3
+function success(data){
+console.log(data);
+}
+function fail(err){
+console.log('Fail ',err);
+}
+console.log("Start ");
+
+doWork(success, fail);
+
+
+console.log("End ",e);
+
+function doWork(success, fail){
+setTimeout(()=>{
+console.log("i WIll run later on ");
+fail('Error Generate After 7 sec');
+//throw new Error("Error Generate After 7 sec ");
+//return "I am Back ";
+},7000);
+}
+VM823:7 Start 
+VM823:12 End  undefined
+undefined
+VM823:16 i WIll run later on 
+VM823:5 Fail  Error Generate After 7 sec
+console.log("Start ");
+var p = doWork();
+p.then((data)=>console.log(data)).catch(err=>console.log(err));
+console.log("End ",p);
+
+function doWork(){
+var promise = new Promise((resolve, reject)=>{
+setTimeout(()=>{
+    if(10>2){
+    resolve("I am Resolve ");
+    }
+    else{
+    reject("I am Reject ");    
+}
+},7000);
+});
+return promise;
+}
+VM1303:1 Start 
+VM1303:4 End  Promise {<pending>}
+undefined
+VM1303:3 I am Resolve 
+p;
+Promise {<fulfilled>: "I am Resolve "}
+console.log("Start ");
+var p = doWork();
+p.then((data)=>console.log(data)).catch(err=>console.log(err));
+console.log("End ",p);
+
+function doWork(){
+var promise = new Promise((resolve, reject)=>{
+setTimeout(()=>{
+    if(10>20){
+    resolve("I am Resolve ");
+    }
+    else{
+    reject("I am Reject ");    
+}
+},7000);
+});
+return promise;
+}
+VM1324:1 Start 
+VM1324:4 End  Promise {<pending>}
+undefined
+VM1324:3 I am Reject 
+p;
+Promise {<rejected>: "I am Reject "}
+console.log("Start ");
+var p = doWork();
+p.then((data)=>console.log(data)).catch(err=>console.log('Error ',err));
+console.log("End ",p);
+
+function doWork(){
+var promise = new Promise((resolve, reject)=>{
+setTimeout(()=>{
+    if(10>20){
+    resolve("I am Resolve ");
+    }
+    else{
+    reject("I am Reject ");    
+}
+},7000);
+});
+return promise;
+}
+VM1374:1 Start 
+VM1374:4 End  Promise {<pending>}
+undefined
+VM1374:3 Error  I am Reject 
+function cube(num){
+var promise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+resolve(num**3);
+    },5000);
+});
+return promse;
+}
+
+undefined
+var p = Promise.all([cube(3), cube(5), cube(2)]);
+VM1627:7 Uncaught ReferenceError: promse is not defined
+    at cube (<anonymous>:7:1)
+    at <anonymous>:1:22
+cube @ VM1627:7
+(anonymous) @ VM1743:1
+function cube(num){
+var promise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+resolve(num**3);
+    },5000);
+});
+return promise;
+}
+
+undefined
+var p = Promise.all([cube(3), cube(5), cube(2)]);
+undefined
+p;
+Promise {<pending>}
+var p = Promise.all([cube(3), cube(5), cube(2)]);
+p.then(result=>console.log(result)).catch(err=>
+console.log(err));
+Promise {<pending>}
+VM2005:2 (3) [27, 125, 8]
+function cube(num){
+console.log('Cube Call ', num);
+var promise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+resolve(num**3);
+    },5000);
+});
+return promise;
+}
+
+undefined
+var p = Promise.all([cube(3), cube(5), cube(2)]);
+p.then(result=>console.log(result)).catch(err=>
+console.log(err));
+VM2057:2 Cube Call  3
+VM2057:2 Cube Call  5
+VM2057:2 Cube Call  2
+Promise {<pending>}
+VM2061:2 (3) [27, 125, 8]
+function cube(num){
+console.log('Cube Call ', num);
+var promise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+if(num>=5){
+reject('Rejected '+num);
+}
+resolve(num**3);
+    },5000);
+});
+return promise;
+}
+
+undefined
+var p = Promise.all([cube(3), cube(5), cube(2)]);
+p.then(result=>console.log(result)).catch(err=>
+console.log(err));
+VM2125:2 Cube Call  3
+VM2125:2 Cube Call  5
+VM2125:2 Cube Call  2
+Promise {<pending>}
+VM2129:3 Rejected 5
+function cube(num, time){
+console.log('Cube Call ', num);
+var promise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+if(num>=5){
+reject('Rejected '+num);
+}
+resolve(num**3);
+    },time);
+});
+return promise;
+}
+
+undefined
+var p = Promise.all([cube(3,6000), cube(5,2000),
+ cube(2, 9000)]);
+p.then(result=>console.log(result)).catch(err=>
+console.log(err));
+VM2163:2 Cube Call  3
+VM2163:2 Cube Call  5
+VM2163:2 Cube Call  2
+Promise {<pending>}
+VM2207:4 Rejected 5
+function cube(num, time){
+console.log('Cube Call ', num);
+var promise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+if(num>=50){
+reject('Rejected '+num);
+}
+resolve(num**3);
+    },time);
+});
+return promise;
+}
+
+undefined
+var p = Promise.all([cube(3,6000), cube(5,2000),
+ cube(2, 9000)]);
+p.then(result=>console.log(result)).catch(err=>
+console.log(err));
+VM2214:2 Cube Call  3
+VM2214:2 Cube Call  5
+VM2214:2 Cube Call  2
+Promise {<pending>}
+VM2218:3 (3) [27, 125, 8]
+var p = Promise.allSettled([cube(3,6000), cube(5,2000),
+ cube(2, 9000)]);
+p.then(result=>console.log(result)).catch(err=>
+console.log(err));
+VM2214:2 Cube Call  3
+VM2214:2 Cube Call  5
+VM2214:2 Cube Call  2
+Promise {<pending>}
+function cube(num, time){
+console.log('Cube Call ', num);
+var promise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+if(num>=5){
+reject('Rejected '+num);
+}
+resolve(num**3);
+    },time);
+});
+return promise;
+}
+
+undefined
+VM2237:3 (3) [{…}, {…}, {…}]
+var p = Promise.allSettled([cube(3,6000), cube(5,2000),
+ cube(2, 9000)]);
+p.then(result=>console.log(result)).catch(err=>
+console.log(err));
+VM2245:2 Cube Call  3
+VM2245:2 Cube Call  5
+VM2245:2 Cube Call  2
+Promise {<pending>}
+VM2250:3 (3) [{…}, {…}, {…}]0: {status: "fulfilled", value: 27}1: {status: "rejected", reason: "Rejected 5"}2: {status: "fulfilled", value: 8}length: 3__proto__: Array(0)
+function cube(num, time){
+console.log('Cube Call ', num);
+var promise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+if(num>=5){
+reject('Rejected '+num);
+}
+resolve(num**3);
+    },time);
+});
+return promise;
+}
+
+undefined
+var p = Promise.race([cube(3,1000), cube(5,2000),
+ cube(2, 9000)]);
+p.then(result=>console.log(result)).catch(err=>
+console.log(err));
+VM2259:2 Cube Call  3
+VM2259:2 Cube Call  5
+VM2259:2 Cube Call  2
+Promise {<pending>}
+VM2280:3 27
+function cube(num, time){
+console.log('Cube Call ', num);
+var promise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+if(num>=50){
+reject('Rejected '+num);
+}
+resolve(num**3);
+    },time);
+});
+return promise;
+}
+async function total(){
+var result = await cube(3);
+console.log(result);
+result = await cube(result);
+console.log(result);
+result = await cube(result);
+console.log(result);
+return result;
+}
+undefined
+total();
+VM2554:2 Cube Call  3
+Promise {<pending>}
+VM2554:15 27
+VM2554:2 Cube Call  27
+VM2554:17 19683
+VM2554:2 Cube Call  19683
+VM2554:20 Uncaught (in promise) Rejected 19683
+total @ VM2554:20
+async function (async)
+total @ VM2554:14
+(anonymous) @ VM2576:1
+function cube(num, time){
+console.log('Cube Call ', num);
+var promise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+/*if(num>=50){
+reject('Rejected '+num);
+}*/
+resolve(num**3);
+    },time);
+});
+return promise;
+}
+async function total(){
+var result = await cube(3);
+console.log(result);
+result = await cube(result);
+console.log(result);
+result = await cube(result);
+console.log(result);
+return result;
+}
+undefined
+total();
+VM2588:2 Cube Call  3
+Promise {<pending>}
+VM2588:15 27
+VM2588:2 Cube Call  27
+VM2588:17 19683
+VM2588:2 Cube Call  19683
+VM2588:19 7625597484987
+function cube(num, time){
+console.log('Cube Call ', num);
+var promise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+/*if(num>=50){
+reject('Rejected '+num);
+}*/
+resolve(num**3);
+    },time);
+});
+return promise;
+}
+async function total(){
+var result = await cube(3,3000);
+console.log(result);
+result = await cube(result,5000);
+console.log(result);
+result = await cube(result,10000);
+console.log(result);
+return result;
+}
+undefined
+total();
+VM2637:2 Cube Call  3
+Promise {<pending>}
+VM2637:15 27
+VM2637:2 Cube Call  27
+VM2637:17 19683
+VM2637:2 Cube Call  19683
+VM2637:19 7625597484987
+var p = fetch('https://cricapi.com/api/matches/A8zoDoPaQgefmB7KunnSuApSgL73');
+undefined
+p;
+Promise {<fulfilled>: Response}
+p.then(response=>console.log(response))
+.catch(err=>console.log(err));
+VM2932:1 Response {type: "cors", url: "https://cricapi.com/api/matches/A8zoDoPaQgefmB7KunnSuApSgL73", redirected: false, status: 200, ok: true, …}body: ReadableStreamlocked: false__proto__: ReadableStreambodyUsed: falseheaders: Headers {}ok: trueredirected: falsestatus: 200statusText: "OK"type: "cors"url: "https://cricapi.com/api/matches/A8zoDoPaQgefmB7KunnSuApSgL73"__proto__: Response
+Promise {<fulfilled>: undefined}
+p.then(response=>console.log(response.json()
+.then(data)=>console.log(data))
+.catch(e=>console.log('Invalid JSON ',e))
+.catch(err=>console.log(err));
+VM3135:2 Uncaught SyntaxError: Malformed arrow function parameter list
+p.then(response=>response.json()
+.then(data=>console.log(data))
+.catch(e=>console.log('Invalid JSON ',e))
+.catch(err=>console.log(err));
+VM3180:4 Uncaught SyntaxError: missing ) after argument list
+p.then(response=>response.json()
+.then(data=>console.log(data))
+.catch(e=>console.log('Invalid JSON ',e)))
+.catch(err=>console.log(err));
+Promise {<pending>}
+VM3190:2 {matches: Array(406), v: "1", ttl: 43, provider: {…}, creditsLeft: 250}
+var p = fetch('https://cricapi.com/api/matches/A8zoDoPaQgefmB7KunnSuApSgL73',{method:'POST',body:JSON.stringify({x:10, y:20})});
+
+
+
+
+
+
+
+
+undefined
+p;
+Promise {<fulfilled>: Response}__proto__: Promise[[PromiseState]]: "fulfilled"[[PromiseResult]]: Responsebody: (...)bodyUsed: falseheaders: Headers__proto__: Headersok: trueredirected: falsestatus: 200statusText: "OK"type: "cors"url: "https://cricapi.com/api/matches/A8zoDoPaQgefmB7KunnSuApSgL73"__proto__: Response
+p.then(response=>response.json()
+.then(data=>console.log(data))
+.catch(e=>console.log('Invalid JSON ',e)))
+.catch(err=>console.log(err));
+Promise {<pending>}
+VM3301:2 {matches: Array(406), v: "1", ttl: 56, provider: {…}, creditsLeft: 250}
